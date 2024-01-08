@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="js/js.js" defer></script>
+    <link rel="stylesheet" href="css/css.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando seu IMC</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="content-imagem">
+            <img src="img/undraw_indoor_bike_pwa4-removebg-preview.png">
+        </div>
+        <div class="content-imc">
+            <div class="background-imc">
+                <h1>Calculadora de IMC</h1>
+                <div class="dadosPessoa">
+                    <p>Informe seu peso:<br>
+                        <input type="text" id="inPeso" placeholder="Ex: 75.8"> (kg)
+                    </p>
+                    <p>Informe sua altura:<br>
+                        <input type="text" id="inAlt" placeholder="Ex: 1.85" maxlength="4"> (cm)
+                    </p>
+                    <p>Informe seu sexo:<br>
+                        Masculino <input type="radio" id="inMasc" checked>
+                        Feminino <input type="radio" id="inFem">
+                    </p>
+                    <button onclick="calcIMC()" class="btnCalc" id="btnCalc">Calcular IMC</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="escurecer" class="hide"></div>
+    <div id="modalResult" class="hide">
+        <div class="modal-header">
+            <h1>IMC</h1>
+            <button id="fechar-modal" onclick="fecharModal()">Fechar</button>
+        </div>
+        <div class="resultado" id="resultado">
+            <div class="content-result">
+                <pre id="inResultado"></pre>
+            </div>
+            <pre id="inIdeal"></pre>
+        </div>
+    </div>
+</body>
+
+</html>

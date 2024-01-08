@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(48, 4, 105), rgb(56, 33, 161));
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-imagem,
+.content-imc {
+    flex: 1;
+}
+
+.content-imagem {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-imc {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-imc {
+    background: #251f7a;
+    width: 90%;
+    height: 70vh;
+    border-radius: 25px;
+    max-height: 400px; 
+}
+
+.background-imc h1 {
+    color: white;
+    font-family: 'Mukta', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+.dadosPessoa {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.dadosPessoa p {
+    color: white;
+    font-family: 'Mukta', sans-serif;
+    font-size: 20px;
+}
+
+#inAlt,
+#inPeso {
+    width: 90%;
+    background: none;
+    border-radius: 20px;
+    height: 40px;
+    border: 2px solid rgb(16, 0, 75);
+    padding: 0 10px;
+    color: white;
+}
+
+#inAlt::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+#inPeso::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+#inMasc,
+#inFem {
+    width: 30px;
+    height: 20px;
+}
+
+.btnCalc {
+    font-family: 'Mukta', sans-serif;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    background: #000d55;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.btnCalc:hover{
+    background: #632abe;
+}
+
+#inAlt,
+#inPeso:focus {
+    color: white;
+}
+
+#escurecer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.6);
+    z-index: 5;
+}
+
+#modalResult{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    background: #632abe;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: 'Mukta', sans-serif;
+    color: white;
+}
+
+#modalResult.hide,
+#escurecer.hide{
+    display: none;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #251f7a;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.modal-header button{
+    background: none;
+    border: 1px solid #251f7a;
+    border-radius: 10px;
+    padding: 10px 10px 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modal-header button:hover{
+    background: rgb(9, 7, 155);
+    border: none;
+}
+
+.resultado {
+    color: white;
+    font-family: 'Mukta', sans-serif;
+}
+
+.content-result {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#inResultado {
+    font-size: 20px;
+    border-bottom: 1px solid #251f7a;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#inIdeal {
+    font-size: 18px;
+    text-align: center;
+}
+@media screen and (max-width: 1330px){
+    .content-imagem {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-imagem img{
+        width: 80%;
+    }
+    .dadosPessoa {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    
+    #inAlt,
+    #inPeso {
+        width: 90%;
+        background: none;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid rgb(16, 0, 75);
+        padding: 0 10px;
+        color: white;
+    }
+
+    #inMasc,
+    #inFem {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btnCalc {
+        font-family: 'Mukta', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        background: #000d55;
+        color: white;
+        font-size: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .content-imc {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .background-imc {
+        background: #251f7a;
+        width: 90%;
+        height: 60vh;
+        border-radius: 25px;
+        max-height: 400px; 
+    }
+}
+@media screen and (max-width: 1026px){
+    .content-imagem {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-imagem img{
+        width: 80%;
+    }
+    .dadosPessoa {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    
+    #inAlt,
+    #inPeso {
+        width: 90%;
+        background: none;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid rgb(16, 0, 75);
+        padding: 0 10px;
+        color: white;
+    }
+
+    #inMasc,
+    #inFem {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btnCalc {
+        font-family: 'Mukta', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        background: #000d55;
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .content-imc {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 1006px){
+    .content-imagem {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-imagem img{
+        width: 80%;
+    }
+    .dadosPessoa {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    .dadosPessoa p {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+    }
+    #inAlt,
+    #inPeso {
+        width: 90%;
+        background: none;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid rgb(16, 0, 75);
+        padding: 0 10px;
+        color: white;
+    }
+
+    #inMasc,
+    #inFem {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btnCalc {
+        font-family: 'Mukta', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        background: #000d55;
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .content-imc {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 910px){
+    .background-imc h1 {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 30px;
+    }
+    .content-imagem {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-imagem img{
+        width: 80%;
+    }
+    .dadosPessoa {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    .dadosPessoa p {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+    }
+    #inAlt,
+    #inPeso {
+        width: 80%;
+        background: none;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid rgb(16, 0, 75);
+        padding: 0 10px;
+        color: white;
+    }
+
+    #inMasc,
+    #inFem {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btnCalc {
+        font-family: 'Mukta', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        background: #000d55;
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .content-imc {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 700px){
+    .background-imc h1 {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 30px;
+    }
+    .content-imagem {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .content-imagem img{
+        width: 80%;
+        display: none;
+    }
+    .dadosPessoa {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    .dadosPessoa p {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+    }
+    #inAlt,
+    #inPeso {
+        width: 90%;
+        background: none;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid rgb(16, 0, 75);
+        padding: 0 10px;
+        color: white;
+    }
+
+    #inMasc,
+    #inFem {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btnCalc {
+        font-family: 'Mukta', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        background: #000d55;
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .content-imc {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 455px){
+    .background-imc h1 {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 30px;
+    }
+    .content-imagem {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .content-imagem img{
+        width: 80%;
+        display: none;
+    }
+    .dadosPessoa {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    .dadosPessoa p {
+        color: white;
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+    }
+    #inAlt,
+    #inPeso {
+        width: 85%;
+        background: none;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid rgb(16, 0, 75);
+        padding: 0 10px;
+        color: white;
+    }
+
+    #inMasc,
+    #inFem {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btnCalc {
+        font-family: 'Mukta', sans-serif;
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        background: #000d55;
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .content-imc {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
